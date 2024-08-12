@@ -142,6 +142,17 @@ h2 {
   margin-bottom: 1rem;
 }
 
+.markdown {
+  h2 {
+    font-weight: 400;
+    line-height: 1;
+  }
+
+  .subtitle {
+    color: #abb2bf;
+  }
+}
+
 .MuiSlider- {
   &root {
     color: var(--ifm-color-primary) !important;

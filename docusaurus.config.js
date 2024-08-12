@@ -68,6 +68,11 @@ module.exports = {
           label: "Guide",
         },
         {
+          type: "doc",
+          docId: "api",
+          label: "API"
+        },
+        {
           to: "about",
           label: "About",
           position: "right",

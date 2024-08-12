@@ -5,6 +5,13 @@ const sidebars = {
       dirName: 'guide', // '.' 即当前 docs 文件夹
     },
   ],
+  api: [
+    {
+      type: 'doc',
+      id: 'api',
+      label: 'CoNote API'
+    }
+  ]
 };
 
 module.exports = sidebars;
