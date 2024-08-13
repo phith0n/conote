@@ -13,14 +13,14 @@ module.exports = {
   favicon: "img/favicon.png",
   organizationName: "CoNote",
   projectName: "CoNote2",
-  // i18n: {
-  //   defaultLocale: "zh-Hans",
-  //   locales: ["zh-Hans", "en"],
-  //   localeConfigs: {
-  //     "zh-Hans": { label: "简体中文" },
-  //     en: { label: "English" },
-  //   },
-  // },
+  i18n: {
+    defaultLocale: "en",
+    locales: ["en", "zh-Hans"],
+    localeConfigs: {
+      "zh-Hans": { label: "简体中文" },
+      en: { label: "English" },
+    },
+  },
   themeConfig: {
     // algolia: {
     //   apiKey: '',
