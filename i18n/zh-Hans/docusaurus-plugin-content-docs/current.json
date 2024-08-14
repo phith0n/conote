@@ -1,0 +1,10 @@
+{
+  "version.label": {
+    "message": "Next",
+    "description": "The label for version current"
+  },
+  "sidebar.api.doc.CoNote API": {
+    "message": "CoNote API",
+    "description": "The label for the doc item CoNote API in sidebar api, linking to the doc api"
+  }
+}

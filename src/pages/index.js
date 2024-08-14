@@ -55,7 +55,7 @@ function Banner() {
       <div className="container">
         <Link
           to='#'
-          title={translate({ id: "homepage.hero.logoLink.title", message: "點我直接閱讀最新一篇日誌" })}
+          title={translate({ id: "homepage.hero.logoLink.title", message: "" })}
         >
           <img className={styles.heroLogo} src={useBaseUrl("/img/icon-large.png")} alt="Website Logo" />
         </Link>
@@ -75,10 +75,16 @@ function Banner() {
           />
           <div className={styles.buttons}>
             <Link
-              className={clsx("button button--outline button--primary button--lg", styles.btnCta)}
+              className={clsx("button button--outline button--primary button--lg margin-right--sm", styles.btnCta)}
               to='#'
             >
               <Translate id="homepage.hero.button.learnMore">Learn More</Translate>
+            </Link>
+            <Link
+              className={clsx("button button--outline button--primary button--lg", styles.btnCta)}
+              to='#'
+            >
+              <Translate id="homepage.hero.button.conote">Go to CoNote</Translate>
             </Link>
           </div>
         </div>
@@ -92,49 +98,56 @@ function ModulesIntro() {
     <section className={clsx("padding-vert--lg", styles.bgModulesIntro)}>
       <div className="container">
         <div className="module-intro-block margin-vert--lg">
-          <div><h3>🟢 Domains</h3>
+          <div>
+            <h3>🟢 <Translate id="homepage.intro.domains.title">Domains</Translate></h3>
             <ul>
-              <li>Exclusive built-in domains</li>
-              <li>Custom domains</li>
+              <li><Translate id="homepage.intro.domains.list0">Exclusive built-in domains</Translate></li>
+              <li><Translate id="homepage.intro.domains.list1">Custom domains</Translate></li>
             </ul>
           </div>
-          <div><h3>🟡 HTTP</h3>
+          <div>
+            <h3>🟡 <Translate id="homepage.intro.http.title">HTTP</Translate></h3>
             <ul>
-              <li>Web request logs</li>
-              <li>Web content served</li>
-              <li>Automatic wildcards HTTPS Certificates</li>
+              <li><Translate id="homepage.intro.http.list0">Web request logs</Translate></li>
+              <li><Translate id="homepage.intro.http.list1">Web content served</Translate></li>
+              <li><Translate id="homepage.intro.http.list2">Automatic wildcards HTTPS Certificates</Translate></li>
             </ul>
           </div>
-          <div><h3>🔵 DNS</h3>
+          <div>
+            <h3>🔵 <Translate id="homepage.intro.dns.title">DNS</Translate></h3>
             <ul>
-              <li>DNS request logs</li>
-              <li>IPv6 support</li>
-              <li>DNS rebinding test support</li>
+              <li><Translate id="homepage.intro.dns.list0">DNS request logs</Translate></li>
+              <li><Translate id="homepage.intro.dns.list1">IPv6 support</Translate></li>
+              <li><Translate id="homepage.intro.dns.list2">DNS rebinding test support</Translate></li>
             </ul>
           </div>
-          <div><h3>🔴 <em>JNDI</em> injection</h3>
+          <div>
+            <h3>🔴 <Translate id="homepage.intro.jndi.title">JNDI injection</Translate></h3>
             <ul>
-              <li>RMI request logs</li>
-              <li>LDAP request logs</li>
+              <li><Translate id="homepage.intro.jndi.list0">RMI request logs</Translate></li>
+              <li><Translate id="homepage.intro.jndi.list1">LDAP request logs</Translate></li>
             </ul>
           </div>
-          <div><h3>🟤 Link Shortener</h3>
+          <div>
+            <h3>🟤 <Translate id="homepage.intro.shortener.title">Link Shortener</Translate></h3>
             <ul>
-              <li>IDN domain name (length &lt;= 3)</li>
-              <li>Password protected link support</li>
+              <li><Translate id="homepage.intro.shortener.list0">IDN domain name (length &lt;= 3)</Translate></li>
+              <li><Translate id="homepage.intro.shortener.list1">Password protected link support</Translate></li>
             </ul>
           </div>
-          <div><h3>🟣 Disposable Email</h3>
+          <div>
+            <h3>🟣 <Translate id="homepage.intro.email.title">Disposable Email</Translate></h3>
             <ul>
-              <li>Exclusive built-in Emails</li>
-              <li>Custom domain Emails</li>
-              <li>Email content sandbox</li>
+              <li><Translate id="homepage.intro.email.list0">Exclusive built-in Emails</Translate></li>
+              <li><Translate id="homepage.intro.email.list1">Custom domain Emails</Translate></li>
+              <li><Translate id="homepage.intro.email.list2">Email content sandbox</Translate></li>
             </ul>
           </div>
-          <div><h3>🟠 XSS Receiver</h3>
+          <div>
+            <h3>🟠 <Translate id="homepage.intro.xss.title">XSS Receiver</Translate></h3>
             <ul>
-              <li>Encrypted communication</li>
-              <li>WASM based payload</li>
+              <li><Translate id="homepage.intro.xss.list0">Encrypted communication</Translate></li>
+              <li><Translate id="homepage.intro.xss.list1">WASM based payload</Translate></li>
             </ul>
           </div>
         </div>
@@ -172,7 +185,7 @@ function Preview() {
       <div className="container">
         <div className="text--center margin-top--lg">
           <h1>
-            <Translate id="homepage.Preview.title">Preview</Translate>
+            <Translate id="homepage.preview.title">Preview</Translate>
           </h1>
         </div>
         <div className="row">
@@ -184,7 +197,7 @@ function Preview() {
           className={clsx("button button--outline button--primary button--lg", styles.btnCta)}
           to='#'
         >
-          <Translate id="homepage.Preview.button.seeMoreCharts">More Previews</Translate>
+          <Translate id="homepage.preview.button.seeMoreCharts">More Previews</Translate>
         </Link>
       </div>
     </section>

@@ -1,0 +1,26 @@
+{
+  "title": {
+    "message": "CoNote",
+    "description": "The title in the navbar"
+  },
+  "logo.alt": {
+    "message": "Website Logo",
+    "description": "The alt text of navbar logo"
+  },
+  "item.label.Home": {
+    "message": "Home",
+    "description": "Navbar item with label Home"
+  },
+  "item.label.Guide": {
+    "message": "Guide",
+    "description": "Navbar item with label Guide"
+  },
+  "item.label.API": {
+    "message": "API",
+    "description": "Navbar item with label API"
+  },
+  "item.label.About": {
+    "message": "About",
+    "description": "Navbar item with label About"
+  }
+}
