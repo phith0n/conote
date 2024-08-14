@@ -30,13 +30,15 @@ rmi://<conote-addr>:1099/<your domain>/<custom data>
   ![](@site/static/docs/jndi_limit.png)
 </div>
 
+## 日志内容
+
 在RMI日志列表中，你可以看到5列数据：
 
-- 接收到RMI日志的时间
-- RMI地址中的`<your domain>`
-- RMI地址中的`<custom data>`
-- Declared IP是RMI协议中客户端宣称的IP地址，一般是客户端的内网IP
-- 客户端IP地址
+- **TIME**: 接收到RMI日志的时间
+- **PATH DOMAIN**: RMI地址中的`<your domain>`
+- **PATH VALUE**: RMI地址中的`<custom data>`
+- **DECLARED IP**: RMI协议中客户端宣称的IP地址，一般是客户端的内网IP
+- **IP**: 客户端IP地址
 
 ## References
 
