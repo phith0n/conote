@@ -14,7 +14,7 @@ module.exports = {
   organizationName: "CoNote",
   projectName: "CoNote2",
   i18n: {
-    defaultLocale: "en",
+    defaultLocale: "zh-Hans",
     locales: ["en", "zh-Hans"],
     localeConfigs: {
       "zh-Hans": { label: "简体中文" },

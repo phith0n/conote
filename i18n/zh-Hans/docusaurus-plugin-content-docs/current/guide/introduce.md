@@ -1,6 +1,6 @@
 ---
 title: 快速上手
-sidebar_position: 1
+sidebar_position: 10
 description: Introduce CoNote
 ---
 
