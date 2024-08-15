@@ -5,4 +5,4 @@ description: CoNote API
 
 # CoNote API
 
-尚无。
+待推出。

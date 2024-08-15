@@ -96,20 +96,20 @@ module.exports = {
           ],
         },
         {
-          title: "Test",
+          title: "CoNote legacy",
           items: [
             {
-              label: "Link 1",
-              to: "#",
+              label: "CoNote 1.0",
+              to: "https://phithon.gitbooks.io/conote/content/",
             },
             {
-              label: "Link 2",
-              to: "#",
+              label: "Preview video",
+              to: "https://www.youtube.com/watch?v=WqbjJ8NISys",
             },
           ],
         },
         {
-          title: "Created by phith0n",
+          title: "Related phith0n",
           items: [
             {
               label: "Blog",
@@ -121,7 +121,7 @@ module.exports = {
             },
             {
               label: "Github",
-              href: "https://github.com",
+              href: "https://github.com/phith0n",
             },
           ],
         },

@@ -76,13 +76,13 @@ function Banner() {
           <div className={styles.buttons}>
             <Link
               className={clsx("button button--outline button--primary button--lg margin-right--sm", styles.btnCta)}
-              to='#'
+              to={useBaseUrl('docs/guide/introduce')}
             >
               <Translate id="homepage.hero.button.learnMore">Learn More</Translate>
             </Link>
             <Link
               className={clsx("button button--outline button--primary button--lg", styles.btnCta)}
-              to='#'
+              to='https://note.leavesongs.com'
             >
               <Translate id="homepage.hero.button.conote">Go to CoNote</Translate>
             </Link>

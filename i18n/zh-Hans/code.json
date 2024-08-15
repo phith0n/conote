@@ -1,30 +1,30 @@
 {
   "homepage.features.stable.title": {
-    "message": "Stable"
+    "message": "稳定"
   },
   "homepage.features.stable.description": {
     "message": "CoNote 项目开启于2017年，1.0版本于2021年开源，2.0版本发布于2024年"
   },
   "homepage.features.professional.title": {
-    "message": "Professional"
+    "message": "专业"
   },
   "homepage.features.professional.description": {
-    "message": "CoNote is specifically designed for cyber security testing and Bug Bounty, developed by experts with over 10 years of experience in the cyber security field."
+    "message": "CoNote专为安全测试与Bug Bounty设计，设计与核心开发者拥有多年安全实践经验并将其融入CoNote功能之中"
   },
   "homepage.features.community.title": {
-    "message": "Community"
+    "message": "社区"
   },
   "homepage.features.community.description": {
-    "message": "CoNote was born from the requirements of the cyber security community, improves gradually with community feedback."
+    "message": "CoNote脱胎于安全社区，7年里经过社区的实践与反馈，改进数版，更懂你的需求"
   },
   "homepage.hero.logoLink.title": {
-    "message": ""
+    "message": "Logo"
   },
   "homepage.hero.title": {
     "message": "CoNote"
   },
   "homepage.hero.tagline": {
-    "message": "<strong>CoNote</strong> - All in one cybersecurity utility platform",
+    "message": "<strong>CoNote</strong> - 多功能信息安全测试套件",
     "description": "Homepage hero tagline, can contain simple html tags"
   },
   "homepage.hero.button.learnMore": {
@@ -37,82 +37,82 @@
     "message": "Domains"
   },
   "homepage.intro.domains.list0": {
-    "message": "Exclusive built-in domains"
+    "message": "内置专属二级域名"
   },
   "homepage.intro.domains.list1": {
-    "message": "Custom domains"
+    "message": "绑定自定义域名"
   },
   "homepage.intro.http.title": {
     "message": "HTTP"
   },
   "homepage.intro.http.list0": {
-    "message": "Web request logs"
+    "message": "Web 请求日志"
   },
   "homepage.intro.http.list1": {
-    "message": "Web content served"
+    "message": "Web 文件与内容服务"
   },
   "homepage.intro.http.list2": {
-    "message": "Automatic wildcards HTTPS Certificates"
+    "message": "全自动HTTPS证书申请与更新"
   },
   "homepage.intro.dns.title": {
     "message": "DNS"
   },
   "homepage.intro.dns.list0": {
-    "message": "DNS request logs"
+    "message": "DNS 请求日志"
   },
   "homepage.intro.dns.list1": {
-    "message": "IPv6 support"
+    "message": "IPv6 支持"
   },
   "homepage.intro.dns.list2": {
-    "message": "DNS rebinding test support"
+    "message": "DNS rebinding 测试"
   },
   "homepage.intro.jndi.title": {
-    "message": "JNDI injection"
+    "message": "JNDI 注入"
   },
   "homepage.intro.jndi.list0": {
-    "message": "RMI request logs"
+    "message": "RMI 请求日志"
   },
   "homepage.intro.jndi.list1": {
-    "message": "LDAP request logs"
+    "message": "LDAP 请求日志"
   },
   "homepage.intro.shortener.title": {
-    "message": "Link Shortener"
+    "message": "链接缩短"
   },
   "homepage.intro.shortener.list0": {
-    "message": "IDN domain name (length <= 3)"
+    "message": "IDN 域名 (长度 <= 3)"
   },
   "homepage.intro.shortener.list1": {
-    "message": "Password protected link support"
+    "message": "短域名密码保护"
   },
   "homepage.intro.email.title": {
-    "message": "Disposable Email"
+    "message": "邮箱"
   },
   "homepage.intro.email.list0": {
-    "message": "Exclusive built-in Emails"
+    "message": "专属内置临时邮箱"
   },
   "homepage.intro.email.list1": {
-    "message": "Custom domain Emails"
+    "message": "自定义域名邮箱"
   },
   "homepage.intro.email.list2": {
-    "message": "Email content sandbox"
+    "message": "邮件安全沙箱"
   },
   "homepage.intro.xss.title": {
-    "message": "XSS Receiver"
+    "message": "XSS 平台"
   },
   "homepage.intro.xss.list0": {
-    "message": "Encrypted communication"
+    "message": "加密通信"
   },
   "homepage.intro.xss.list1": {
-    "message": "WASM based payload"
+    "message": "基于 WASM 的XSS Payload"
   },
   "homepage.features.button.startReading": {
     "message": "Go to community"
   },
   "homepage.preview.title": {
-    "message": "Preview"
+    "message": "预览"
   },
   "homepage.preview.button.seeMoreCharts": {
-    "message": "More Previews"
+    "message": "更多..."
   },
   "homepage.title": {
     "message": "Home"
