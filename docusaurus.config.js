@@ -1,18 +1,20 @@
 const currentYear = new Date().getFullYear();
 const startYear = 2017;
 const siteYear = startYear === currentYear ? String(startYear) : `${startYear} - ${currentYear}`;
+const baseURL = '/conote-docs/'
 
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
   title: "CoNote",
   tagline: "All in one cybersecurity utility platform",
-  url: "https://note.leavesongs.com",
-  baseUrl: "/",
+  url: "https://phith0n.github.io/",
+  baseUrl: baseURL,
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
   favicon: "img/favicon.png",
-  organizationName: "CoNote",
-  projectName: "CoNote2",
+  organizationName: "phith0n",
+  projectName: "conote-docs",
+  deploymentBranch: 'gh-pages',
   i18n: {
     defaultLocale: "zh-Hans",
     locales: ["en", "zh-Hans"],
@@ -90,7 +92,7 @@ module.exports = {
           items: [
             {
               html: `
-                <img src="/img/icon-large.png" alt="CoNote2" title="CoNote2" class="footer-logo"/>
+                <img src="${baseURL}img/icon-large.png" alt="CoNote2" title="CoNote2" class="footer-logo"/>
               `,
             },
           ],
