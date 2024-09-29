@@ -36,6 +36,7 @@ jobs:
           tag: v${{ inputs.version }}
           out-file-path: ./releases
           token: ${{ env.REPOSITORY_TOKEN }}
+          fileName: 'conote2_*.tar.gz'
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v3
