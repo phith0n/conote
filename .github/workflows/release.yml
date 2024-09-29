@@ -22,8 +22,8 @@ jobs:
           repository: phith0n/conote2
           ref: v${{ inputs.version }}
           path: ./docker/sql
-          sparse-checkout: |
-            provider/db/migrations
+          sparse-checkout: provider/db/migrations
+          sparse-checkout-cone-mode: false
 
       - name: Download releases
         uses: robinraju/release-downloader@v1
@@ -32,7 +32,10 @@ jobs:
           repository: phith0n/conote2
           tag: v${{ inputs.version }}
           out-file-path: ./docker
-          fileName: 'conote2_*.tar.gz'
+          fileName: "conote2_*.tar.gz"
+
+      - run: |
+          ls -R ./
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v3
