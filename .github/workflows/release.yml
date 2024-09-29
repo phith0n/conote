@@ -1,0 +1,75 @@
+name: Release to Docker
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "Release version tag (e.g. 20240929)"
+        required: true
+        type: string
+
+env:
+  DOCKER_HUB_USERNAME: ${{ secrets.DOCKER_HUB_USERNAME }}
+  DOCKER_HUB_ACCESS_TOKEN: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
+  REPOSITORY_TOKEN: ${{ secrets.REPOSITORY_TOKEN }}
+  SOURCE_REPOSITORY: phith0n/conote2
+  IMAGE_NAME: vulhub/conote2
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        platform:
+          - linux/amd64
+          - linux/arm64
+          - linux/386
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Download releases
+        uses: robinraju/release-downloader@v1
+        with:
+          repository: ${{ env.SOURCE_REPOSITORY }}
+          tag: v${{ inputs.version }}
+          out-file-path: ./releases
+          token: ${{ env.REPOSITORY_TOKEN }}
+
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v3
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Log in to the Docker hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ env.DOCKER_HUB_USERNAME }}
+          password: ${{ env.DOCKER_HUB_ACCESS_TOKEN }}
+
+      - name: Detect CPU architecture
+        run: |
+          CPU_NAME=$(case $(uname -m) in  
+              i386|i686) echo "386" ;;  
+              x86_64) echo "amd64" ;;  
+              aarch64|arm64) echo "arm64" ;;  
+              *) echo "unknown" ;;  
+          esac)  
+          echo "CPU_NAME=$CPU_NAME" >> $GITHUB_ENV  
+          echo "Detected CPU architecture: $CPU_NAME"
+          echo "all release files: "
+          ls -al ./releases
+
+      - name: Build image and push to Docker Hub
+        uses: docker/build-push-action@v5
+        with:
+          context: ./releases
+          platforms: ${{ matrix.platform }}
+          push: true
+          tags: |
+            ${{ env.IMAGE_NAME }}:v${{ inputs.version }}
+            ${{ env.IMAGE_NAME }}:latest
+          build-args: |
+            BINARY_URL=./conote2_${{ inputs.version }}_linux_${{ env.CPU_NAME }}.tar.gz
