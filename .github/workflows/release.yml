@@ -8,13 +8,6 @@ on:
         required: true
         type: string
 
-env:
-  DOCKER_HUB_USERNAME: ${{ secrets.DOCKER_HUB_USERNAME }}
-  DOCKER_HUB_ACCESS_TOKEN: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
-  REPOSITORY_TOKEN: ${{ secrets.REPOSITORY_TOKEN }}
-  SOURCE_REPOSITORY: phith0n/conote2
-  IMAGE_NAME: vulhub/conote2
-
 jobs:
   build-and-push:
     runs-on: ubuntu-latest
@@ -25,10 +18,10 @@ jobs:
       - name: Download releases
         uses: robinraju/release-downloader@v1
         with:
-          repository: ${{ env.SOURCE_REPOSITORY }}
+          repository: phith0n/conote2
           tag: v${{ inputs.version }}
           out-file-path: ./releases
-          token: ${{ env.REPOSITORY_TOKEN }}
+          token: ${{ secrets.REPOSITORY_TOKEN }}
           fileName: 'conote2_*.tar.gz'
 
       - name: Set up QEMU
@@ -40,8 +33,8 @@ jobs:
       - name: Log in to the Docker hub
         uses: docker/login-action@v3
         with:
-          username: ${{ env.DOCKER_HUB_USERNAME }}
-          password: ${{ env.DOCKER_HUB_ACCESS_TOKEN }}
+          username: ${{ secrets.DOCKER_HUB_USERNAME }}
+          password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
 
       - name: Build image and push to Docker Hub
         uses: docker/build-push-action@v5
@@ -50,7 +43,7 @@ jobs:
           platforms: linux/amd64,linux/arm64
           push: true
           tags: |
-            ${{ env.IMAGE_NAME }}:v${{ inputs.version }}
-            ${{ env.IMAGE_NAME }}:latest
+            vulhub/conote2:v${{ inputs.version }}
+            vulhub/conote2:latest
           build-args: |
             VERSION=${{ inputs.version }}
