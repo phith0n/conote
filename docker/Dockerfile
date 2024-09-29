@@ -4,9 +4,9 @@ LABEL maintainer="phith0n <root@leavesongs.com>"
 
 RUN set -ex \
     && apt-get update \
-    && apt-get install -y --no-install-recommends wget curl ca-certificates wait-for-it postgresql-client \
+    && apt-get install -y --no-install-recommends wget curl ca-certificates wait-for-it \
     && curl -sSf https://atlasgo.sh | sh \
-    && mkdir -p /opt/conote2/sql
+    && mkdir -p /opt/conote2/migrations
 
 ARG TARGETARCH
 ARG VERSION
