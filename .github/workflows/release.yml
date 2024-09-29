@@ -36,6 +36,14 @@ jobs:
 
       - run: |
           ls -R ./
+          cd docker
+          for tarfile in conote2_*.tar.gz
+          do
+            tar --strip-components=1 -xzf "$tarfile"
+            suffix=$(echo "$tarfile" | sed -n 's/conote2_\(.*\)\.tar\.gz/\1/p')
+            mv conote2 conote2_$suffix
+            rm "$tarfile" README.md
+          done
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v3
