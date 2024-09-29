@@ -22,7 +22,7 @@ jobs:
           repository: phith0n/conote2
           ref: v${{ inputs.version }}
           path: ./docker/sql
-          sparse-checkout: provider/db/migrations
+          sparse-checkout: providers/db/migrations
           sparse-checkout-cone-mode: false
 
       - name: Download releases
