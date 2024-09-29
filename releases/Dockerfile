@@ -8,8 +8,9 @@ RUN set -ex \
     && curl -sSf https://atlasgo.sh | sh \
     && mkdir -p /opt/conote2
 
-ARG BINARY_URL
-ADD ${BINARY_URL} /opt/conote2/conote2
+ARG TARGETARCH
+ARG VERSION
+ADD ./conote2_${VERSION}_linux_${TARGETARCH}.tar.gz /opt/conote2/conote2
 
 RUN set -ex && chmod +x /opt/conote2/conote2
 

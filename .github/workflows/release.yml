@@ -18,12 +18,6 @@ env:
 jobs:
   build-and-push:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        platform:
-          - linux/amd64
-          - linux/arm64
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -49,27 +43,14 @@ jobs:
           username: ${{ env.DOCKER_HUB_USERNAME }}
           password: ${{ env.DOCKER_HUB_ACCESS_TOKEN }}
 
-      - name: Detect CPU architecture
-        run: |
-          CPU_NAME=$(case $(uname -m) in  
-              i386|i686) echo "386" ;;  
-              x86_64) echo "amd64" ;;  
-              aarch64|arm64) echo "arm64" ;;  
-              *) echo "unknown" ;;  
-          esac)  
-          echo "CPU_NAME=$CPU_NAME" >> $GITHUB_ENV  
-          echo "Detected CPU architecture: $CPU_NAME"
-          echo "all release files: "
-          ls -al ./releases
-
       - name: Build image and push to Docker Hub
         uses: docker/build-push-action@v5
         with:
           context: ./releases
-          platforms: ${{ matrix.platform }}
+          platforms: linux/amd64,linux/arm64
           push: true
           tags: |
             ${{ env.IMAGE_NAME }}:v${{ inputs.version }}
             ${{ env.IMAGE_NAME }}:latest
           build-args: |
-            BINARY_URL=./conote2_${{ inputs.version }}_linux_${{ env.CPU_NAME }}.tar.gz
+            VERSION=${{ inputs.version }}
