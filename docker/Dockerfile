@@ -11,9 +11,9 @@ RUN set -ex \
 ARG TARGETARCH
 ARG VERSION
 COPY ./conote2_${VERSION}_linux_${TARGETARCH} /opt/conote2/conote2
-COPY ./sql/providers/db/migrations/* /opt/conote2/migrations/
-COPY ./default-config.yaml /opt/conote2/default-config.yaml
-COPY ./docker-entrypoint.sh /opt/conote2/docker-entrypoint.sh
+COPY ./repo/providers/db/migrations/* /opt/conote2/migrations/
+COPY ./repo/default-config.yaml /opt/conote2/default-config.yaml
+COPY ./repo/docker-entrypoint.sh /opt/conote2/docker-entrypoint.sh
 
 RUN set -ex && chmod +x /opt/conote2/conote2
 

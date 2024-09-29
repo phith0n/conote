@@ -1,0 +1,41 @@
+services:
+  web:
+    image: vulhub/conote2:latest
+    ports:
+      - "80:80"
+      - "443:443"
+      - "25:25"
+      - "587:587"
+      - "53:53/tcp"
+      - "53:53/udp"
+      - "1099:1099"
+      - "389:389"
+      - "636:636"
+    volumes:
+      - ./data:/opt/conote2/data
+    restart: unless-stopped
+    environment:
+      - POSTGRES_HOST=db
+      - POSTGRES_PORT=5432
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=conote
+    networks:
+      - conote
+  db:
+    image: postgres:16-alpine
+    volumes:
+      - ./postgres:/var/lib/postgresql/data
+    ports:
+      - "127.0.0.1:5432:5432"
+    restart: unless-stopped
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=conote
+    networks:
+      - conote
+
+networks:
+  conote:
+    

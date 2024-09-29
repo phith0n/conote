@@ -12,17 +12,20 @@ jobs:
   build-and-push:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
+      - name: Checkout This Repository
         uses: actions/checkout@v4
 
-      - name: Checkout CoNote SQL files
+      - name: Checkout CoNote Repository
         uses: actions/checkout@v4
         with:
           token: ${{ secrets.REPOSITORY_TOKEN }}
           repository: phith0n/conote2
           ref: v${{ inputs.version }}
-          path: ./docker/sql
-          sparse-checkout: providers/db/migrations
+          path: ./docker/repo
+          sparse-checkout: |
+            providers/db/migrations
+            default-config.yaml
+            docker-entrypoint.sh
           sparse-checkout-cone-mode: false
 
       - name: Download releases
