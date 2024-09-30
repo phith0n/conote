@@ -22,5 +22,9 @@
   "item.label.About": {
     "message": "About",
     "description": "Navbar item with label About"
+  },
+  "item.label.Self-Hosted": {
+    "message": "Self-Hosted",
+    "description": "Navbar item with label Self-Hosted"
   }
 }

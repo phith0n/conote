@@ -71,6 +71,11 @@ module.exports = {
         },
         {
           type: "doc",
+          docId: "self-hosted/introduce",
+          label: "Self-Hosted",
+        },
+        {
+          type: "doc",
           docId: "api",
           label: "API"
         },

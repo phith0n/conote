@@ -20,6 +20,7 @@ CoNote作为一个多功能信息安全测试套件，让我们在安全测试�
   - DNS日志
   - RMI日志
   - LDAP日志
+  - SMTP日志
 - Web内容与文件服务
 - IDN域名缩短服务（长度低至**3字符**）
 - 临时邮箱服务
@@ -30,10 +31,6 @@ CoNote作为一个多功能信息安全测试套件，让我们在安全测试�
 
 ## 使用方法
 
-CoNote全新2.0版本已进入内测阶段，地址：<https://note.leavesongs.com/>。
+CoNote全新2.0版本分为云版本和自建版本，云版本地址：<https://note.leavesongs.com/>，自建服务器搭建方法请参考：[自建CoNote服务器](../self-hosted/introduce)。
 
-CoNote 2.0版本功能完全重构，尚未释出CoNote 2.0正式版，1.0开源版地址：<https://github.com/opensec-cn/conote-community>。
-
-## 搭建方法
-
-待CoNote 2.0正式版发布后即可下载。
+云版本未对外开放注册，推荐搭建自己的CoNote服务器，也能更好地保护自己的测试过程不受其他用户影响。

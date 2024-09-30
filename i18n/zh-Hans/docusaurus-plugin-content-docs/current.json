@@ -6,5 +6,13 @@
   "sidebar.api.doc.CoNote API": {
     "message": "CoNote API",
     "description": "The label for the doc item CoNote API in sidebar api, linking to the doc api"
+  },
+  "sidebar.selfHosted.category.Installation": {
+    "message": "安装",
+    "description": "The label for category Installation in sidebar selfHosted"
+  },
+  "sidebar.selfHosted.category.Configuration": {
+    "message": "配置",
+    "description": "The label for category Configuration in sidebar selfHosted"
   }
 }

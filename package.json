@@ -7,7 +7,7 @@
     "start": "cross-env NODE_OPTIONS=--openssl-legacy-provider docusaurus start",
     "build": "cross-env NODE_OPTIONS=--openssl-legacy-provider docusaurus build",
     "swizzle": "cross-env NODE_OPTIONS=--openssl-legacy-provider docusaurus swizzle",
-    "deploy": "cross-env NODE_OPTIONS=--openssl-legacy-provider GIT_USER_NAME=phith0n GIT_USER_EMAIL=phith0n.ph2f@gmail.com docusaurus deploy",
+    "deploy": "cross-env NODE_OPTIONS=--openssl-legacy-provider docusaurus deploy",
     "clear": "cross-env NODE_OPTIONS=--openssl-legacy-provider docusaurus clear",
     "serve": "cross-env NODE_OPTIONS=--openssl-legacy-provider docusaurus serve",
     "write-translations": "cross-env NODE_OPTIONS=--openssl-legacy-provider docusaurus write-translations",
