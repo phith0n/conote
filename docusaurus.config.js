@@ -156,15 +156,29 @@ module.exports = {
         docs: {
           sidebarPath: require.resolve("./sidebars.js"),
           routeBasePath: "docs",
+          sidebarCollapsed: false,
         },
         blog: {
           showReadingTime: true,
         },
         theme: {
-          customCss: require.resolve("./src/css/custom.scss"),
+          customCss: require.resolve("./src/css/custom.css"),
         },
       },
-    ],
+    ]
   ],
-  plugins: ["docusaurus-plugin-sass"],
+  plugins: [
+    // "docusaurus-plugin-sass",
+    async function myPlugin(context, options) {
+      return {
+        name: "docusaurus-tailwindcss",
+        configurePostCss(postcssOptions) {
+          // Appends TailwindCSS and AutoPrefixer.
+          postcssOptions.plugins.push(require("tailwindcss"));
+          postcssOptions.plugins.push(require("autoprefixer"));
+          return postcssOptions;
+        },
+      };
+    },
+  ],
 };

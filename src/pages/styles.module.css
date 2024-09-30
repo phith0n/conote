@@ -30,7 +30,6 @@
   }
 }
 
-// not really used
 .buttons {
   display: flex;
   align-items: center;
@@ -82,10 +81,6 @@
     stroke: var(--ifm-font-color-base);
     transition: stroke var(--ifm-transition-fast) var(--ifm-transition-timing-default);
   }
-}
-
-.previewImage {
-
 }
 
 .featureImage {

@@ -7,19 +7,19 @@ description: Manage CoNote service
 ## 重启CoNote服务
 
 ```bash
-docker-compose restart
+docker compose restart
 ```
 
 ## 停止CoNote服务
 
 ```bash
-docker-compose stop
+docker compose stop
 ```
 
 完全停止CoNote服务并删除容器、网络等：
 
 ```bash
-docker-compose down -v
+docker compose down -v
 ```
 
 此时，所有CoNote相关的容器、网络等都会被删除。但是由于数据文件默认存储在当前目录下，所以数据不会丢失。重新执行`docker-compose up -d`即可重新启动CoNote服务。
@@ -31,5 +31,5 @@ docker-compose down -v
 在新服务器上重新运行CoNote服务：
 
 ```bash
-docker-compose up -d
+docker compose up -d
 ```

@@ -27,11 +27,11 @@
     "message": "<strong>CoNote</strong> - 多功能信息安全测试套件",
     "description": "Homepage hero tagline, can contain simple html tags"
   },
-  "homepage.hero.button.learnMore": {
-    "message": "Learn More"
+  "homepage.hero.button.userGuide": {
+    "message": "User Guide"
   },
-  "homepage.hero.button.conote": {
-    "message": "Go to CoNote"
+  "homepage.hero.button.download": {
+    "message": "Download"
   },
   "homepage.intro.domains.title": {
     "message": "Domains"
@@ -66,14 +66,14 @@
   "homepage.intro.dns.list2": {
     "message": "DNS rebinding 测试"
   },
-  "homepage.intro.jndi.title": {
-    "message": "JNDI 注入"
+  "homepage.intro.logs.title": {
+    "message": "多日志支持"
   },
-  "homepage.intro.jndi.list0": {
-    "message": "RMI 请求日志"
+  "homepage.intro.logs.list0": {
+    "message": "RMI/LDAP 日志"
   },
-  "homepage.intro.jndi.list1": {
-    "message": "LDAP 请求日志"
+  "homepage.intro.logs.list1": {
+    "message": "SMTP 请求日志"
   },
   "homepage.intro.shortener.title": {
     "message": "链接缩短"
@@ -390,5 +390,74 @@
   "theme.tags.tagsPageTitle": {
     "message": "标签",
     "description": "The title of the tag list page"
+  },
+  "pricingTable.cloudVersion.title": {
+    "message": "云版本"
+  },
+  "pricingTable.cloudVersion.subtitle": {
+    "message": "无需搭建，开箱即用"
+  },
+  "pricingTable.cloudVersion.button": {
+    "message": "立即使用"
+  },
+  "pricingTable.cloudVersion.features.1": {
+    "message": "所有私有化版本功能"
+  },
+  "pricingTable.cloudVersion.features.2": {
+    "message": "免费内置域名"
+  },
+  "pricingTable.cloudVersion.features.3": {
+    "message": "独立服务器与IP地址"
+  },
+  "pricingTable.cloudVersion.features.4": {
+    "message": "暂不开放注册"
+  },
+  "pricingTable.cloudVersion.features.all": {
+    "message": "See all features"
+  },
+  "pricingTable.selfHostedVersion.title": {
+    "message": "私有化版本"
+  },
+  "pricingTable.selfHostedVersion.subtitle": {
+    "message": "免费，自建服务器部署"
+  },
+  "pricingTable.selfHostedVersion.button": {
+    "message": "阅读文档"
+  },
+  "pricingTable.selfHostedVersion.features.1": {
+    "message": "Docker一键部署，零成本"
+  },
+  "pricingTable.selfHostedVersion.features.2": {
+    "message": "自行购买域名与配置DNS"
+  },
+  "pricingTable.selfHostedVersion.features.3": {
+    "message": "独立服务器与IP地址"
+  },
+  "pricingTable.selfHostedVersion.features.4": {
+    "message": "完全隐私性"
+  },
+  "pricingTable.selfHostedVersion.features.5": {
+    "message": "公共社区支持"
+  },
+  "pricingTable.selfHostedVersion.features.all": {
+    "message": "See all features"
+  },
+  "pricingTable.commercialVersion.title": {
+    "message": "商业版本"
+  },
+  "pricingTable.commercialVersion.subtitle": {
+    "message": "解除所有限制"
+  },
+  "pricingTable.commercialVersion.button": {
+    "message": "尽情期待"
+  },
+  "pricingTable.commercialVersion.features.1": {
+    "message": "所有私有化版本功能"
+  },
+  "pricingTable.commercialVersion.features.2": {
+    "message": "客制化开发"
+  },
+  "pricingTable.commercialVersion.features.all": {
+    "message": "See all features"
   }
 }
