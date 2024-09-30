@@ -13,7 +13,7 @@ module.exports = {
   onBrokenMarkdownLinks: "warn",
   favicon: "img/favicon.png",
   organizationName: "phith0n",
-  projectName: "conote-docs",
+  projectName: "conote",
   deploymentBranch: 'gh-pages',
   i18n: {
     defaultLocale: "zh-Hans",
