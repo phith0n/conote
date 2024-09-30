@@ -1,13 +1,13 @@
 const currentYear = new Date().getFullYear();
 const startYear = 2017;
 const siteYear = startYear === currentYear ? String(startYear) : `${startYear} - ${currentYear}`;
-const baseURL = '/conote-docs/'
+const baseURL = '/'
 
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
   title: "CoNote",
   tagline: "All in one cybersecurity utility platform",
-  url: "https://phith0n.github.io/",
+  url: "https://conote.leavesongs.com/",
   baseUrl: baseURL,
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
