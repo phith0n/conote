@@ -1,6 +1,6 @@
 ---
 title: 使用Docker安装
-sidebar_position: 20
+sidebar_position: 22
 description: Install CoNote using Docker and Docker Compose
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: 管理CoNote服务
-sidebar_position: 30
+sidebar_position: 25
 description: Manage CoNote service
 ---
 

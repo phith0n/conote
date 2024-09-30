@@ -34,7 +34,7 @@ smtp:
 
 ## 内置邮件域名
 
-- `email_domains` 字符串数组类型，指定邮件发送的域名，比如 `example.domain.tld`
+- `email_domains` 字符串数组，指定邮件发送的域名，比如 `example.domain.tld`
 
 当用户使用“匿名邮箱”或“临时邮箱”模块时，需要生成随机邮件地址，这个 `email_domains` 就用于指定这些邮件地址的域名。
 
