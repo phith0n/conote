@@ -7,7 +7,7 @@ const baseURL = '/'
 module.exports = {
   title: "CoNote",
   tagline: "All in one cybersecurity utility platform",
-  url: "https://conote.leavesongs.com/",
+  url: "https://conote.vulhub.org/",
   baseUrl: baseURL,
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
