@@ -4,6 +4,8 @@
     "src/"
   ],
   "compilerOptions": {
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
     "lib": [
       "es2019",
       "dom",
