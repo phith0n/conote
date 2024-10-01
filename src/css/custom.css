@@ -2,19 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
-/**
- * Any CSS included here will be global. The classic template
- * bundles Infima by default. Infima is a CSS framework designed to
- * work well for content-centric websites.
- */
-
+/** * Any CSS included here will be global. The classic template * bundles Infima by default. Infima is a CSS framework designed to * work well for content-centric websites. */
 .flex-center--wrap {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
 }
-
 :root {
   --ifm-color-primary: #31a8ec;
   --ifm-color-primary-dark: #179dea;
@@ -24,35 +18,26 @@
   --ifm-color-primary-lighter: #58b9f0;
   --ifm-color-primary-lightest: #7fc9f3;
   --ifm-code-font-size: 95%;
-
   --ifm-alert-color: var(--ifm-font-color-base);
   --ifm-color-warning: rgba(255, 75, 75, 0.2);
-
-  --img-filter: ;
   --bg-comment_block: rgba(56, 182, 255, 0.2);
 }
-
 .docusaurus-highlight-code-line {
-  background-color: rgb(72, 77, 91);
+  background-color: #484d5b;
   display: block;
   margin: 0 calc(-1 * var(--ifm-pre-padding));
   padding: 0 var(--ifm-pre-padding);
 }
-
-.header-github-link {
-  &:hover {
-    opacity: 0.6;
-  }
-  &:before {
-    content: "";
-    width: 24px;
-    height: 24px;
-    display: flex;
-    background: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12'/%3E%3C/svg%3E")
-      no-repeat;
-  }
+.header-github-link:hover {
+  opacity: 0.6;
 }
-
+.header-github-link:before {
+  content: "";
+  width: 24px;
+  height: 24px;
+  display: flex;
+  background: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12'/%3E%3C/svg%3E") no-repeat;
+}
 html[data-theme="dark"] {
   --ifm-color-primary: #38b6ff;
   --ifm-color-primary-dark: #19abff;
@@ -61,20 +46,13 @@ html[data-theme="dark"] {
   --ifm-color-primary-light: #57c1ff;
   --ifm-color-primary-lighter: #67c7ff;
   --ifm-color-primary-lightest: #95d8ff;
-
   --ifm-color-warning: rgba(255, 50, 50, 0.5);
-
   --img-filter: brightness(0.85) contrast(1.05);
-  --bg-comment_block: rgb(18, 130, 196);
-
-  .header-github-link {
-    &:before {
-      background: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='white' d='M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12'/%3E%3C/svg%3E")
-        no-repeat;
-    }
-  }
+  --bg-comment_block: #1282c4;
 }
-
+html[data-theme="dark"] .header-github-link:before {
+  background: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='white' d='M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12'/%3E%3C/svg%3E") no-repeat;
+}
 .img-digest {
   display: block;
   max-width: 85%;
@@ -82,11 +60,10 @@ html[data-theme="dark"] {
   border-radius: 5px;
   transition: transform 0.3s ease-in-out;
   filter: var(--img-filter);
-  &:hover {
-    transform: scale(1.02);
-  }
 }
-
+.img-digest:hover {
+  transform: scale(1.02);
+}
 .caption {
   max-width: 85%;
   text-align: center;
@@ -94,79 +71,64 @@ html[data-theme="dark"] {
   margin: 1em auto 2em;
   opacity: 0.8;
 }
-
 .subtitle {
   font-size: 1.3em;
 }
-
 .comment--translc_gray {
   margin: 1em auto;
   padding: 15px 20px;
   border-radius: 5px;
   background-color: rgba(175, 175, 175, 0.2);
 }
-
 .module-intro-block {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 1em 0.5em;
 }
-
 .chart-title {
   text-align: center;
   font-size: 24px;
   font-weight: bold;
 }
-
 .comment_block {
   margin: 1em auto;
   padding: 15px 20px;
   border-radius: 5px;
   background-color: var(--bg-comment_block);
 }
-
 .footer-logo {
   max-width: 140px;
   transition: transform 0.2s ease-in;
   filter: var(--img-filter);
-  &:hover {
-    transform: scale(1.1);
-  }
 }
-
+.footer-logo:hover {
+  transform: scale(1.1);
+}
 .pages--h1 {
   font-size: 3rem;
   margin-bottom: 2rem;
 }
-
 h2 {
   font-size: 2rem;
   margin-top: 3rem;
   margin-bottom: 1rem;
 }
-
-.markdown {
-  h2 {
-    font-weight: 400;
-    line-height: 1;
-  }
-
-  .subtitle {
-    color: #abb2bf;
-  }
+.markdown h2 {
+  font-weight: 400;
+  line-height: 1;
 }
-
-.MuiSlider- {
-  &root {
-    color: var(--ifm-color-primary) !important;
-  }
-  &markLabel {
-    color: var(--ifm-color-emphasis-400) !important;
-  }
-  &markLabelActive {
-    color: var(--ifm-font-color-base) !important;
-  }
-  &markActive {
-    background-color: var(--ifm-color-emphasis-0) !important;
-  }
+.markdown .subtitle {
+  color: #abb2bf;
+}
+.MuiSlider-root {
+  color: var(--ifm-color-primary) !important;
+}
+.MuiSlider-markLabel {
+  color: var(--ifm-color-emphasis-400) !important;
+}
+.MuiSlider-markLabelActive {
+  color: var(--ifm-font-color-base) !important;
+}
+.MuiSlider-markActive {
+  background-color: var(--ifm-color-emphasis-0) !important;
 }

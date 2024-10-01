@@ -42,4 +42,4 @@ rmi://<conote-addr>:1099/<your domain>/<custom data>
 
 ## References
 
-JNDI版本限制图片来自于：<https://m0d9.me/2020/07/16/JNDI%EF%BC%9AJNDI-RMI%20%E6%B3%A8%E5%85%A5%E5%8F%8A%E7%BB%95%E8%BF%87JDK%E9%AB%98%E7%89%88%E6%9C%AC%E9%99%90%E5%88%B6/>
+JNDI版本限制图片来自于：[参考文档](https://m0d9.me/2020/07/16/JNDI%EF%BC%9AJNDI-RMI%20%E6%B3%A8%E5%85%A5%E5%8F%8A%E7%BB%95%E8%BF%87JDK%E9%AB%98%E7%89%88%E6%9C%AC%E9%99%90%E5%88%B6/)

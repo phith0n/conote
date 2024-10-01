@@ -1,7 +1,13 @@
+const { themes } = require("prism-react-renderer");
+const lightTheme = themes.github;
+const darkTheme = themes.dracula;
 const currentYear = new Date().getFullYear();
 const startYear = 2017;
-const siteYear = startYear === currentYear ? String(startYear) : `${startYear} - ${currentYear}`;
-const baseURL = '/'
+const siteYear =
+  startYear === currentYear
+    ? String(startYear)
+    : `${startYear} - ${currentYear}`;
+const baseURL = "/";
 
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
@@ -14,7 +20,7 @@ module.exports = {
   favicon: "img/favicon.png",
   organizationName: "phith0n",
   projectName: "conote",
-  deploymentBranch: 'gh-pages',
+  deploymentBranch: "gh-pages",
   i18n: {
     defaultLocale: "zh-Hans",
     locales: ["en", "zh-Hans"],
@@ -41,13 +47,13 @@ module.exports = {
     //   textColor: '#091E42', // Defaults to `#000`.
     // },
     prism: {
-      theme: require("prism-react-renderer/themes/github"),
-      darkTheme: require("prism-react-renderer/themes/dracula"),
+      theme: lightTheme,
+      darkTheme: darkTheme,
     },
     docs: {
       sidebar: {
-        hideable: true
-      }
+        hideable: true,
+      },
     },
     navbar: {
       hideOnScroll: true,
@@ -77,7 +83,7 @@ module.exports = {
         {
           type: "doc",
           docId: "api",
-          label: "API"
+          label: "API",
         },
         {
           to: "about",
@@ -165,7 +171,7 @@ module.exports = {
           customCss: require.resolve("./src/css/custom.css"),
         },
       },
-    ]
+    ],
   ],
   plugins: [
     // "docusaurus-plugin-sass",

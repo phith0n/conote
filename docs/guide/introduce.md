@@ -31,6 +31,6 @@ CoNote作为一个多功能信息安全测试套件，让我们在安全测试�
 
 ## 使用方法
 
-CoNote全新2.0版本分为云版本和自建版本，云版本地址：<https://note.leavesongs.com/>，自建服务器搭建方法请参考：[自建CoNote服务器](../self-hosted/introduce)。
+CoNote全新2.0版本分为云版本和自建版本，云版本地址：[https://note.leavesongs.com/](https://note.leavesongs.com/)，自建服务器搭建方法请参考：[自建CoNote服务器](../self-hosted/introduce.mdx)。
 
 云版本未对外开放注册，推荐搭建自己的CoNote服务器，也能更好地保护自己的测试过程不受其他用户影响。

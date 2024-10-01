@@ -2,122 +2,102 @@
   padding: 3em 0;
   overflow: hidden;
 }
-
 .heroText {
   font-size: 22px;
   padding: 110px 30px;
 }
-
 .heroLogo {
   width: 400px;
   margin: 16px 30px;
   float: right;
   transition: transform 0.2s ease-in-out;
-  &:hover {
-    transform: scale(1.15) rotate(2deg);
-  }
 }
-
+.heroLogo:hover {
+  transform: scale(1.15) rotate(2deg);
+}
 .heroTitle {
   font-size: 3em;
 }
-
 .heroTagline {
   font-size: 1.5em;
-  b {
-    color: var(--ifm-color-primary);
-    font-weight: normal;
-  }
 }
-
+.heroTagline b {
+  color: var(--ifm-color-primary);
+  font-weight: normal;
+}
 .buttons {
   display: flex;
   align-items: center;
 }
-
 @media screen and (max-width: 1150px) {
   .heroBanner {
     padding: 3em;
-  }
+ }
   .heroText {
     font-size: 18px;
     padding: 65px 0;
-  }
+ }
   .heroLogo {
     width: 300px;
     margin: 10px 0 0 10px;
-  }
+ }
 }
-
 @media screen and (max-width: 780px) {
   .heroBanner {
     padding: 2em;
-  }
+ }
   .heroLogo {
     display: block;
     float: none;
     margin: 0 auto;
     max-width: 70%;
-  }
+ }
   .heroText {
     font-size: 14px;
     padding: 28px 0;
     text-align: center;
-  }
+ }
   .buttons {
     justify-content: center;
-  }
+ }
   .btnCta {
     font-size: 18px;
-  }
+ }
 }
-
-.DatePicker {
-  input {
-    color: var(--ifm-font-color-base);
-    transition: color var(--ifm-transition-fast) var(--ifm-transition-timing-default);
-  }
-  svg {
-    stroke: var(--ifm-font-color-base);
-    transition: stroke var(--ifm-transition-fast) var(--ifm-transition-timing-default);
-  }
+.DatePicker input {
+  color: var(--ifm-font-color-base);
+  transition: color var(--ifm-transition-fast) var(--ifm-transition-timing-default);
 }
-
+.DatePicker svg {
+  stroke: var(--ifm-font-color-base);
+  transition: stroke var(--ifm-transition-fast) var(--ifm-transition-timing-default);
+}
 .featureImage {
   height: 200px;
   margin: 16px 0;
   transition: transform 0.3s;
-  &:hover {
-    transform: scale(1.1);
-  }
-
-  &Professional {
-    height: 185px;
-  }
 }
-
-.bg {
-  &ModulesIntro {
-    background-color: #f5f5f5;
-  }
-  &Preview {
-    background-color: #ffffff;
-  }
-  &Features {
-    background-color: #f3f3f3;
-  }
+.featureImage:hover {
+  transform: scale(1.1);
 }
-
-html[data-theme="dark"] {
-  .bg {
-    &ModulesIntro {
-      background-color: #1a1a1a;
-    }
-    &Preview {
-      background-color: #0c0c0c;
-    }
-    &Features {
-      background-color: #181818;
-    }
-  }
+.featureImageProfessional {
+  height: 185px;
+}
+.bgModulesIntro {
+  background-color: #f5f5f5;
+}
+.bgPreview {
+  background-color: #fff;
+}
+.bgFeatures {
+  background-color: #f3f3f3;
+}
+html[data-theme="dark"] .bgModulesIntro {
+  background-color: #1a1a1a;
+}
+html[data-theme="dark"] .bgPreview {
+  background-color: #0c0c0c;
+}
+html[data-theme="dark"] .bgFeatures {
+  background-color: #181818;
 }
