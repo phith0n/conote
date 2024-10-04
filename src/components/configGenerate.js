@@ -14,31 +14,29 @@ function generateSecureRandomString(length = 32) {
 }
 
 const ConfigGenerate = () => {
-  const [config, setConfig] = useState(() => {
-    // 尝试从 sessionStorage 加载状态
-    const savedConfig = sessionStorage.getItem("configGenerateState");
-    return savedConfig
-      ? JSON.parse(savedConfig)
-      : {
-          mainDomain: "",
-          nsDomain1: "",
-          nsDomain2: "",
-          baseDomains: [],
-          ipAddress: "",
-          allowRegistration: false,
-          enableShortener: false,
-          shortDomain: "",
-          geoIPKey: "",
-          enableGoogleLogin: false,
-          googleClientId: "",
-        };
+  const [config, setConfig] = useState({
+    mainDomain: "",
+    nsDomain1: "",
+    nsDomain2: "",
+    baseDomains: [],
+    ipAddress: "",
+    allowRegistration: false,
+    enableShortener: false,
+    shortDomain: "",
+    geoIPKey: "",
+    enableGoogleLogin: false,
+    googleClientId: "",
   });
 
-  // 当组件卸载时保存状态到 sessionStorage
   useEffect(() => {
-    return () => {
-      sessionStorage.setItem("configGenerateState", JSON.stringify(config));
-    };
+    const savedConfig = sessionStorage.getItem("configGenerateState");
+    if (savedConfig) {
+      setConfig(JSON.parse(savedConfig));
+    }
+  }, []);
+
+  useEffect(() => {
+    sessionStorage.setItem("configGenerateState", JSON.stringify(config));
   }, [config]);
 
   function handleChange(e) {
