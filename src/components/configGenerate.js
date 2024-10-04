@@ -5,7 +5,7 @@ import DomainListInput from "./DomainListInput";
 // 安全的随机字符串生成函数
 function generateSecureRandomString(length = 32) {
   const characters =
-    "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+    "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789#@!$^*-_/.?:|";
   const array = new Uint8Array(length);
   crypto.getRandomValues(array);
   return Array.from(array, (byte) => characters[byte % characters.length]).join(
@@ -98,7 +98,7 @@ networks:
       (domain) => domain.trim() !== ""
     );
     const rebindDomain =
-      config.baseDomains.length > 0 ? `rebinding.${config.baseDomains[0]}` : "";
+      config.baseDomains.length > 0 ? `r.${config.baseDomains[0]}` : "";
     return `debug: false
 secret_key: "${generateSecureRandomString(32)}"
 
