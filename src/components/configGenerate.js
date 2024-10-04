@@ -2,10 +2,16 @@ import React, { useState, useEffect } from "react";
 import JSZip from "jszip";
 import DomainListInput from "./DomainListInput";
 
+const AlphaNumeric =
+  "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+const AlphaNumericSpecial =
+  "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789#@!$^*-_/.?:|";
+
 // 安全的随机字符串生成函数
-function generateSecureRandomString(length = 32) {
-  const characters =
-    "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789#@!$^*-_/.?:|";
+function generateSecureRandomString(
+  length = 32,
+  characters = AlphaNumericSpecial
+) {
   const array = new Uint8Array(length);
   crypto.getRandomValues(array);
   return Array.from(array, (byte) => characters[byte % characters.length]).join(
@@ -28,16 +34,7 @@ const ConfigGenerate = () => {
     googleClientId: "",
   });
 
-  useEffect(() => {
-    const savedConfig = sessionStorage.getItem("configGenerateState");
-    if (savedConfig) {
-      setConfig(JSON.parse(savedConfig));
-    }
-  }, []);
-
-  useEffect(() => {
-    sessionStorage.setItem("configGenerateState", JSON.stringify(config));
-  }, [config]);
+  const [isFormValid, setIsFormValid] = useState(false);
 
   function handleChange(e) {
     const { name, value, type, checked } = e.target;
@@ -48,7 +45,7 @@ const ConfigGenerate = () => {
   }
 
   function generateCompose() {
-    const postgresPassword = generateSecureRandomString(12);
+    const postgresPassword = generateSecureRandomString(12, AlphaNumeric);
     return `services:
   web:
     image: vulhub/conote2:latest
@@ -100,11 +97,11 @@ networks:
     const rebindDomain =
       config.baseDomains.length > 0 ? `r.${config.baseDomains[0]}` : "";
     return `debug: false
-secret_key: "${generateSecureRandomString(32)}"
+secret_key: "${generateSecureRandomString(32, AlphaNumericSpecial)}"
 
 # Database related config
 database:
-  database_url: postgres://\${POSTGRES_USER}:\${postgresPassword}@\${POSTGRES_HOST}:\${POSTGRES_PORT}/\${POSTGRES_DB}
+  database_url: postgres://\${POSTGRES_USER}:\${POSTGRES_PASSWORD}@\${POSTGRES_HOST}:\${POSTGRES_PORT}/\${POSTGRES_DB}
 
 # Web server related config
 web:
@@ -129,7 +126,7 @@ dns:
 shortener:
   enable: ${config.enableShortener}
   short_domain: ${JSON.stringify(config.shortDomain)}
-  hashids_salt: "${generateSecureRandomString(12)}"
+  hashids_salt: "${generateSecureRandomString(12, AlphaNumeric)}"
 
 # SMTP server related config
 smtp:
@@ -168,7 +165,7 @@ google:
   client_id: ${JSON.stringify(config.googleClientId)}`;
   }
 
-  const downloadConfig = () => {
+  function downloadConfig() {
     const configYaml = generateConfig();
     const composeYaml = generateCompose();
 
@@ -186,7 +183,53 @@ google:
       document.body.removeChild(a);
       URL.revokeObjectURL(url);
     });
-  };
+  }
+
+  // 添加验证函数
+  function validateForm() {
+    const {
+      mainDomain,
+      nsDomain1,
+      nsDomain2,
+      baseDomains,
+      ipAddress,
+      geoIPKey,
+    } = config;
+    let isValid =
+      mainDomain.trim() !== "" &&
+      nsDomain1.trim() !== "" &&
+      nsDomain2.trim() !== "" &&
+      baseDomains.length > 0 &&
+      baseDomains.every((domain) => domain.trim() !== "") &&
+      ipAddress.trim() !== "" &&
+      geoIPKey.trim() !== "";
+
+    if (isValid && config.enableShortener && config.shortDomain.trim() === "") {
+      isValid = false;
+    }
+
+    if (
+      isValid &&
+      config.enableGoogleLogin &&
+      config.googleClientId.trim() === ""
+    ) {
+      isValid = false;
+    }
+
+    setIsFormValid(isValid);
+  }
+
+  useEffect(() => {
+    const savedConfig = sessionStorage.getItem("configGenerateState");
+    if (savedConfig) {
+      setConfig(JSON.parse(savedConfig));
+    }
+  }, []);
+
+  useEffect(() => {
+    validateForm();
+    sessionStorage.setItem("configGenerateState", JSON.stringify(config));
+  }, [config]);
 
   return (
     <>
@@ -408,7 +451,12 @@ google:
           <button
             type="button"
             onClick={downloadConfig}
-            className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 cursor-pointer"
+            className={`w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white ${
+              isFormValid
+                ? "bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 cursor-pointer"
+                : "bg-gray-400 cursor-not-allowed"
+            }`}
+            disabled={!isFormValid}
           >
             生成并下载配置文件
           </button>
