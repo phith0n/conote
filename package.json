@@ -18,11 +18,12 @@
     "@docusaurus/preset-classic": "^3.5.2",
     "@material-ui/core": "^4.11.3",
     "@mdx-js/react": "^3.0.1",
-    "prism-react-renderer": "^2.1.0",
     "autoprefixer": "^10.4.20",
     "chart.js": "^2.9.4",
     "clsx": "^1.1.1",
+    "jszip": "^3.10.1",
     "postcss": "^8.4.47",
+    "prism-react-renderer": "^2.1.0",
     "react": "^18.2.0",
     "react-chartjs-2": "^2.11.1",
     "react-date-picker": "^8.1.1",
@@ -53,6 +54,6 @@
   },
   "engines": {
     "node": ">=18.0"
-   },
+  },
   "packageManager": "yarn@1.22.19+sha1.4ba7fc5c6e704fce2066ecbfb0b0d8976fe62447"
 }

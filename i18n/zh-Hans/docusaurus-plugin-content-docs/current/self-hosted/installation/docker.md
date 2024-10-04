@@ -4,21 +4,46 @@ sidebar_position: 22
 description: Install CoNote using Docker and Docker Compose
 ---
 
-## 获取镜像
+## 自动生成 Docker 环境
 
-```bash
-docker pull vulhub/conote:latest
-```
+:::info
 
-## 运行容器
-
-:::tip
-
-在运行容器之前，请先创建config.yaml文件，并将其放置在当前目录下。关于配置文件的具体内容，请参考[配置文件](../configuration/introduce.md)。
+使用[**这个小助手**](../generate.mdx)可以辅助生成 docker-compose.yaml 和 config.yaml 配置文件，下载后解压放在任意目录下，直接执行`docker compose up -d`即可启动CoNote服务。
 
 :::
 
-CoNote使用PostgreSQL作为数据库，因此推荐使用docker-compose.yml文件来运行CoNote与数据库容器，推荐配置如下：
+生成并下载配置文件后，使用 docker compose 命令运行容器：
+
+```bash
+docker compose up -d
+```
+
+在第一次运行容器时，CoNote会自动尝试连接数据库，并初始化表和数据。
+
+上述环境运行后，当前目录会存在如下文件：
+
+```
+.
+├── config.yaml
+├── data
+├── docker-compose.yml
+└── postgres
+```
+
+其中，`config.yaml` 是 CoNote 的配置文件； `data` 是 CoNote 的数据目录，其中包含用户上传的文件、接收到的邮件、https证书等； `postgres` 是 PostgreSQL 的数据目录。
+
+CoNote 运行后，可以通过**你的主域名**访问 CoNote。关于主域名、端口、https 证书等配置，请参考[配置文件](../configuration/introduce.md)。
+
+## 手工创建 Docker 环境
+
+当然，我们也可以手工创建配置文件。CoNote 的配置文件包含下面两个：
+
+- config.yaml
+- docker-compose.yml
+
+config.yaml 包含所有 CoNote 相关的配置，具体内容请参考[配置文件](../configuration/introduce.md)。
+
+docker-compose.yml 文件用于配置 Docker 容器，推荐内容如下：
 
 ```yaml
 services:
@@ -63,27 +88,3 @@ services:
 networks:
   conote:
 ```
-
-使用docker compose命令运行容器：
-
-```bash
-docker compose up -d
-```
-
-在第一次运行容器时，CoNote会自动尝试连接数据库，并初始化表和数据。
-
-上述环境运行后，当前目录会存在如下文件：
-
-```
-.
-├── config.yaml
-├── data
-├── docker-compose.yml
-└── postgres
-```
-
-其中，`config.yaml` 是 CoNote 的配置文件； `data` 是 CoNote 的数据目录，其中包含用户上传的文件、接收到的邮件、https证书等； `postgres` 是 PostgreSQL 的数据目录。
-
-## 访问CoNote
-
-CoNote 运行后，可以通过**你的主域名**访问 CoNote。关于主域名、端口、https 证书等配置，请参考[配置文件](../configuration/introduce.md)。
