@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import JSZip from "jszip";
 import DomainListInput from "./DomainListInput";
+import CodeBlock from "@theme/CodeBlock";
 
 const AlphaNumeric =
   "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
@@ -16,6 +17,29 @@ function generateSecureRandomString(
   crypto.getRandomValues(array);
   return Array.from(array, (byte) => characters[byte % characters.length]).join(
     ""
+  );
+}
+
+function ConfigDisplay({ configYaml, composeYaml }) {
+  return (
+    <div className="mt-8 space-y-4">
+      <div>
+        <h3 className="text-lg font-medium text-gray-900 dark:text-white">
+          config.yaml
+        </h3>
+        <div className="relative">
+          <CodeBlock language="yaml">{configYaml}</CodeBlock>
+        </div>
+      </div>
+      <div>
+        <h3 className="text-lg font-medium text-gray-900 dark:text-white">
+          docker-compose.yml
+        </h3>
+        <div className="relative">
+          <CodeBlock language="yaml">{composeYaml}</CodeBlock>
+        </div>
+      </div>
+    </div>
   );
 }
 
@@ -35,6 +59,10 @@ const ConfigGenerate = () => {
   });
 
   const [isFormValid, setIsFormValid] = useState(false);
+  const [generatedConfigs, setGeneratedConfigs] = useState({
+    configYaml: "",
+    composeYaml: "",
+  });
 
   function handleChange(e) {
     const { name, value, type, checked } = e.target;
@@ -217,6 +245,12 @@ google:
     }
 
     setIsFormValid(isValid);
+  }
+
+  function generateAndShowConfigs() {
+    const configYaml = generateConfig();
+    const composeYaml = generateCompose();
+    setGeneratedConfigs({ configYaml, composeYaml });
   }
 
   useEffect(() => {
@@ -447,11 +481,11 @@ google:
             </p>
           </div>
         ) : null}
-        <div>
+        <div className="flex space-x-4">
           <button
             type="button"
             onClick={downloadConfig}
-            className={`w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white ${
+            className={`flex-1 py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white ${
               isFormValid
                 ? "bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 cursor-pointer"
                 : "bg-gray-400 cursor-not-allowed"
@@ -460,8 +494,26 @@ google:
           >
             生成并下载配置文件
           </button>
+          <button
+            type="button"
+            onClick={generateAndShowConfigs}
+            className={`flex-1 py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white ${
+              isFormValid
+                ? "bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 cursor-pointer"
+                : "bg-gray-400 cursor-not-allowed"
+            }`}
+            disabled={!isFormValid}
+          >
+            生成并展示配置文件
+          </button>
         </div>
       </form>
+      {generatedConfigs.configYaml && generatedConfigs.composeYaml && (
+        <ConfigDisplay
+          configYaml={generatedConfigs.configYaml}
+          composeYaml={generatedConfigs.composeYaml}
+        />
+      )}
     </>
   );
 };
