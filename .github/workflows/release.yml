@@ -28,6 +28,13 @@ jobs:
             docker-entrypoint.sh
           sparse-checkout-cone-mode: false
 
+      - name: Download MaxMind GeoIP Database
+        run: |
+          mkdir -p /tmp/geoip
+          wget -qO- "https://download.maxmind.com/app/geoip_download?edition_id=GeoLite2-City&license_key=${{ secrets.MAXMIND_KEY }}&suffix=tar.gz" | tar -zx --strip-components=1 -C /tmp/geoip
+          mv /tmp/geoip/GeoLite2-City.mmdb ./docker/geoip2.mmdb
+          rm -rf /tmp/geoip
+
       - name: Download releases
         uses: robinraju/release-downloader@v1
         with:

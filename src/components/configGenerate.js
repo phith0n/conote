@@ -185,7 +185,7 @@ limitation:
 
 # GeoIP2 related config
 geoip2:
-  filename: ./data/geoip2.mmdb
+  filename: ./geoip2.mmdb
   key: ${JSON.stringify(config.geoIPKey)}
 
 google:
