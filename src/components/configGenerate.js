@@ -263,6 +263,7 @@ google:
   useEffect(() => {
     validateForm();
     sessionStorage.setItem("configGenerateState", JSON.stringify(config));
+    setGeneratedConfigs({ configYaml: "", composeYaml: "" });
   }, [config]);
 
   return (
