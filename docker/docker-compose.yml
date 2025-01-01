@@ -11,6 +11,8 @@ services:
       - "1099:1099"
       - "389:389"
       - "636:636"
+      - "21:21"
+      - "50010-50030:50010-50030"
     volumes:
       - ./data:/opt/conote2/data
     restart: unless-stopped

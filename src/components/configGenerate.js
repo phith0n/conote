@@ -87,6 +87,8 @@ const ConfigGenerate = () => {
       - "1099:1099"
       - "389:389"
       - "636:636"
+      - "21:21"
+      - "50010-50030:50010-50030"
     volumes:
       - ./config.yaml:/opt/conote2/config.yaml
       - ./data:/opt/conote2/data
@@ -172,6 +174,11 @@ ldap:
   addr: ""
   port: 389
   tls_port: 636
+
+ftp:
+  addr: ""
+  port: 21
+  data_port_range: [50010, 50030]
 
 acme:
   enable: true

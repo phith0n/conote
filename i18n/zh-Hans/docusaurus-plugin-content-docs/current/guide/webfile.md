@@ -22,3 +22,7 @@ Web File模块就可以用于放置任意类型的Web文件：
 - 文件Content-Type
 - HTTP返回状态码
 - HTTP返回头
+
+Web File中的文件除了通过HTTP协议访问外，也可以通过FTP协议访问。我们在文件的下拉菜单中，可以找到每个文件的FTP链接和所有的HTTP链接：
+
+![](@site/static/docs/webfile-link-menu.png)
